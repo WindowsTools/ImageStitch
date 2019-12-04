@@ -1,0 +1,35 @@
+﻿<Window x:Class="ImageStitch.StitchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageStitch"
+        mc:Ignorable="d"
+        Title="StitchWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <Canvas Grid.Row="0">
+                <Grid MouseWheel="Grid_MouseWheel" MouseMove="Grid_MouseMove">
+                    <Grid.RenderTransform>
+                        <ScaleTransform  x:Name="scale"></ScaleTransform>
+                    </Grid.RenderTransform>
+                    <Image Source="C:\Users\lanmage\Pictures\altar.jpg" Width="50" Height="50"/>
+                </Grid>
+            </Canvas>
+
+            <Grid Grid.Row="1">
+                <Label Name="status" HorizontalAlignment="Left" VerticalContentAlignment="Center"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
